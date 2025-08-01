@@ -1,76 +1,50 @@
 # MindEngage
 
-> **GenAI-powered authoring studio** for creating interactive lessons, quizzes, diagrams, and simulations—fast.
+> AI-powered authoring studio for interactive lessons, quizzes, diagrams, and simulations.
 
-[Website](https://mindengage.ai) · [Docs](https://mindengage.gitbook.io/mindengage-docs/) · [Examples](https://mindengage.net/demo) · [Labs](https://lab.mindengage.ai)
+[Website](https://mindengage.ai) · [Docs](https://mindengage.gitbook.io/mindengage-docs/) · [Contact](mailto:hello@mindengage.ai)
 
 ---
 
 ## What is MindEngage?
-MindEngage is a web-based authoring suite that lets you **generate, edit, and publish** fully interactive courses using large language models (LLMs) with optional **RAG** over your uploaded sources. You can produce outlines, lessons, auto-graded quizzes, and embeddable 2D/3D/physics/ML **simulations**, then **export** to Google Classroom or as portable HTML5.
+MindEngage is a managed (proprietary) platform to **generate, edit, and publish** interactive courseware with LLMs and optional RAG.  
+This GitHub organization hosts **public companion projects** (gateways, validators, integrations) and **forks** we use in our workflows.  
+> Self-hosting the core platform is not supported. If you need private deployment options, contact us.
 
 ---
 
-## Core Capabilities
-- **Courseware generation:** Outline → lessons → publish, with audience/duration controls.
-- **Quizzes & exams:** Bloom-aligned items (TF/Single/Multi/Numeric/Short Answer/Confidence-MCQ); auto-scoring HTML.
-- **Interactive simulations:** No-code wizard for 2D/3D/physics/ML; returns self-contained HTML you can embed anywhere.
-- **Diagrams & decks:** Generate block diagrams and slide decks from prompts.
-- **RAG with your sources:** Upload PDFs/slides/text; cite and ground generations.
-- **Export & publish:** One-click Google Classroom/Forms; or download an **HTML5 zip** to host anywhere.
+## Public Repositories
+
+| Repo | What it is | Tech | Notes |
+|---|---|---|---|
+| **mindengage-lms** | Service(s) supporting LMS workflows used with MindEngage | Go | Public |
+| **certichain-gateway** | Stateless **LTI 1.3** gateway that bridges LMS course completions to the **CertiChain** network for automated verifiable credential issuance | TypeScript | Public |
+| **certichain** | Decentralized protocol for issuing & verifying secure, fraud-proof skills certificates on a blockchain | Solidity | Public |
+| **headless-html-validator** | Node 20 microservice using headless Chrome (Puppeteer) to load HTML, capture console/network/runtime errors, and return a JSON verdict; Prometheus metrics; Dockerfile included | JavaScript | Public |
+| **canvas-lms** | *Fork* of Instructure’s open LMS | Ruby | Fork (upstream: Instructure) |
+| **whisper.cpp** | *Fork* of OpenAI’s Whisper C/C++ implementation | C/C++ | Fork (upstream: ggerganov) |
+
+See each repository’s README for detailed setup, configuration, and licensing.
 
 ---
 
-## Key Modules
-- **Course Builder** – Generate/refine outlines and full courses (Basic/Advanced/Enhanced accuracy; Enhanced uses RAG).
-- **Quiz Builder** – Build assessments from lesson highlights; export as HTML or Google Forms.
-- **Simulation Builder** – Create interactive 2D/3D/physics/ML simulations with live controls.
-- **Diagram / Deck / Code / Explainer** – Visuals, slides, runnable code snippets, and concept explainers.
-- **Standards Library** – Templates aligned to NGSS, ISTE, CCSS-Math, ABET, and 21st-Century Skills.
-
----
-
-## Quickstart (Hosted Studio)
-1. **Sign in:** Use Google SSO or password-less email link from `noreply@mindengage.ai`.
-2. **Create a course:** Open **Course Builder**, set Subject/Audience/Duration, **Generate Outline**, then **Generate Full Course**.
-3. **Add quizzes & sims:** Use **Quiz Builder** and **Simulation Builder** to enrich each lesson.
-4. **Publish or export:**
-   - **Google Classroom/Forms:** Guided flow for posting assignments and converting quizzes.
-   - **Portable HTML5:** Download a complete zip and deploy on any static host.
-
-> Browser support: Recent Chrome/Firefox/Edge. For Google exports, sign in with a Google account and authorize when prompted.
-
----
-
-## Standards & Instructional Design
-Use built-in templates for **NGSS, ISTE, CCSS-Math, ABET,** and **21st-Century Skills**. Customize fragments (Objectives, Practices, Modeling Tasks, Assessments), save and reuse them across courses.
-
----
-
-## Roadmap (High-Level)
-- [ ] Deeper LMS integrations (Canvas/Moodle)
-- [ ] Expanded diagram/deck libraries
-- [ ] More simulation presets (STEM & data-science)
-- [ ] Fine-grained citation controls and rubric generation
-- [ ] Organization-wide template/version management
+## Using the Platform (API/Integrations)
+1. **Get access** – email **hello@mindengage.ai** for an account and API key (org name & use case).
+2. **Connect your LMS** – use `certichain-gateway` for LTI 1.3 events → credential issuance on **CertiChain**.
+3. **Validate content at build/deploy** – run `headless-html-validator` in CI/CD to gate broken embeds/scripts.
+4. **Publish** – export from MindEngage to Google Classroom/Forms or portable HTML bundles per Docs.
 
 ---
 
 ## Contributing
-We welcome issues and PRs for docs, templates, and examples. For core services/features, please open an issue first to discuss scope and architecture.
+We welcome issues and PRs for **public repos only** (above). For platform feature requests, open an issue in the relevant public repo or email us.
+
+- Please see each repo’s `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, and `SECURITY.md` (if present).
 
 ---
 
-## Support
-- **Docs:** https://mindengage.gitbook.io/mindengage-docs/
-- **General:** hello@mindengage.ai
-- **Early Adopter (BETA):** Reach out to join the feedback program.
+## Licensing
+This organization contains **mixed licenses**. Refer to each repository’s `LICENSE`.  
+MindEngage core services remain **proprietary** and are governed by our Terms of Service and EULA.
 
----
-
-## Privacy & Terms
-See the site’s **Privacy Policy** and **Terms of Service**.
-
----
-
-© 2025 MindEngage. All rights reserved. Licensing is per-repository—see each repo’s `LICENSE`.
+© 2025 MindEngage. All rights reserved. Trademarks belong to their respective owners.
