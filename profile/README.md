@@ -2,7 +2,7 @@
 
 > AI-powered authoring studio for interactive lessons, quizzes, diagrams, and simulations.
 
-[Website](https://mindengage.ai) · [Docs](https://mindengage.gitbook.io/mindengage-docs/) · [Contact](mailto:hello@mindengage.ai)
+[Website](https://mindengage.ai) · [Docs](https://mindengage.gitbook.io/mindengage-docs/) · [Contact](mailto:contact@mindengage.ai)
 
 ---
 
@@ -29,7 +29,7 @@ See each repository’s README for detailed setup, configuration, and licensing.
 ---
 
 ## Using the Platform (API/Integrations)
-1. **Get access** – email **hello@mindengage.ai** for an account and API key (org name & use case).
+1. **Get access** – email **contact@mindengage.ai** for an account and API key (org name & use case).
 2. **Connect your LMS** – use `certichain-gateway` for LTI 1.3 events → credential issuance on **CertiChain**.
 3. **Validate content at build/deploy** – run `headless-html-validator` in CI/CD to gate broken embeds/scripts.
 4. **Publish** – export from MindEngage to Google Classroom/Forms or portable HTML bundles per Docs.
